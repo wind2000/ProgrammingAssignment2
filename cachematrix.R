@@ -11,16 +11,23 @@ makeCacheMatrix <- function(x = matrix()) {
         }
         
         ## gets the stored matrix.
-        get <- function() x
+        get <- function() {
+                x
+        }
+        
+        ## stores the inverse of the matrix in cache.
         setinverse <- function(invmat) {
           invcache <<- invmat
         }
         
         ## gets the cached inverse of the matrix.
-        getinverse <- function() invcache
-        
+        getinverse <- function() {
+                invcache
+        }
+
         ## returns the special matrix
-        list(set = set, get =  get,
+        list(set = set, 
+             get =  get,
              setinverse = setinverse,
              getinverse = getinverse)
 }
